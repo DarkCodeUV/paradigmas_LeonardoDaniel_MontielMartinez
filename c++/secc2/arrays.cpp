@@ -27,6 +27,27 @@ int main() {
 
 		cout << "Element of index " << i << numbers[i] << endl;
 	}
+
+	cout << endl << "Initializing with zero values" << endl;
+	cout << "=========================" << endl;
+	
+	int numberArray[8] = { };
+	for(int i = 0; i < 8; i++){
+	
+		cout << "Element of index " << i << numbers[i] << endl;
+	
+	}
+
+
+	string textArrays[] = {"fox","dog","cat" };
+
+	for(int k = 0; k < 8; k++){
+
+		cout << "Element of index " << textArrays[k] << endl;
+	}
+
+	
+
 	
 	return 0;
 }
