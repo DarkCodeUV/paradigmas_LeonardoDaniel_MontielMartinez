@@ -6,6 +6,7 @@ int main(){
 
     int value = 4;
 
+    //const int value = 4;
     switch (value){
 
         case 4:
@@ -20,13 +21,8 @@ int main(){
             cout << "value is 6" << endl;
         break;
 
-
-
         default:
             cout << "unrecognized value. " << endl;
 
     }
-
-
-
 }
