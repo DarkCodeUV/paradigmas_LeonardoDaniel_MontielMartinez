@@ -1,6 +1,7 @@
 // hopfield.cpp
 
 #include <iostream>
+#include <fstream> 
 using namespace std;
 
 // initialize the weigth matrix W with the patterns 
@@ -74,6 +75,35 @@ int check(int *v1, int *v2, int N)
     return 1;
 }
 
+int readfile(string file, int *v1, int col, int N)
+{
+std::ifstream infile(file);
+int a1, a2, a3, a4, a5;
+int row=0;
+
+while(infile >> a1 >> a2 >> a3 >> a4 >> a5) {
+std::cout << a1 << a2 << a3 << a4 << a5 << endl;
+v1[(row*col) + 0] = a1;
+v1[(row*col) + 1] = a2;
+v1[(row*col) + 2] = a3;
+v1[(row*col) + 3] = a4;
+v1[(row*col) + 4] = a5;
+row++;
+}
+
+for (int i=0; i<N; i++)
+{
+if (v1[i] == 0)
+v1[i] = -1;
+cout << v1[i];
+
+if (((i+1)%col) == 0 )
+cout << endl;
+}
+cout << endl;
+return 0;
+} 
+
 int main(void)
 {
   int N = 4;
@@ -82,7 +112,12 @@ int main(void)
   int *x1 = new int[N];
   cout << "iterations " << endl;
 
+readfile("one.txt", x0, col, N);
+readfile("two.txt", x1, col, N); 
+
+
   // pattern 0
+  /*
   x0[0] = 1;
   x0[1] = 1;
   x0[2] = 1;
@@ -93,7 +128,7 @@ int main(void)
   x1[1] = -1;
   x1[2] = -1;
   x1[3] = 1;
- 
+ */
   int **W = NULL;  // allocating memory for W
   W = new int *[N];
   for (int i=0; i<N; i++)
@@ -121,6 +156,8 @@ int main(void)
   cout << " energy of initial configuration : " << E << endl;
 
   int *h = new int[N]; // allocation memory for h
+
+readfile("x.txt", h, col, N); 
 
   for (int p=0; p<N; p++)
   {

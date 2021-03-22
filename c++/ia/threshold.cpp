@@ -41,6 +41,7 @@ double bipolar(double* w,double* x,int n){
     return tanh(lambda*sum);
 }
 
+
 int main(void){
     int n = 5; // length of input vector includes bias
     double theta =0.5; // threshold
