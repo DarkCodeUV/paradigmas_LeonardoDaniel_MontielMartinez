@@ -1,10 +1,7 @@
-// hopfield.cpp
-
 #include <iostream>
 #include <fstream>
 using namespace std;
 
-// initialize the weigth matrix W with the patterns 
 void printw(int **W, int N)
 {
 
@@ -18,20 +15,18 @@ void printw(int **W, int N)
   }
 }
 
-void weigths(int **W, int *x0, int *x1, int N)
+void weigths(int **W, int *x0, int *x1,int *x2,int *x3,int *x4, int *x5,int *x6,int *x7,int *x8,int *x9, int N)
 {
 
   for (int i=0; i<N; i++)
   for (int j=0; j<N; j++)
   {
-    W[i][j] = x0[i]*x0[j] + x1[i]*x1[j];
+    W[i][j] = x0[i]*x0[j] + x1[i]*x1[j] + x2[i]*x2[j] + x3[i]*x3[j] + x4[i]*x4[j] + x5[i]*x5[j] + x6[i]*x6[j] + x7[i]*x7[j] + x8[i]*x8[j]  + x9[i]*x9[j];
   }
   for (int k=0; k<N; k++)
     W[k][k]=0;
 
 }
-// calculation of sum over j of W * S
-
 void mul(int **W, int *s, int *h, int N)
 { 
   
@@ -47,7 +42,6 @@ void mul(int **W, int *s, int *h, int N)
 
 }
 
-// energy of the configuration - Ising model
 
 int energy(int **W, int *s, int N)
 {
@@ -79,16 +73,26 @@ int check(int *v1, int *v2, int N)
 int readfile(string file, int *v1, int col, int N)
 {
     std::ifstream infile(file);
-    int a1, a2, a3, a4, a5;
+    int a1, a2, a3, a4, a5, a6, a7, a8,a9,a10, a11,a12,a13;
     int row=0;
    
-    while(infile >> a1 >> a2 >> a3 >> a4 >> a5 ) {
-        std::cout << a1 << a2 << a3 << a4 << a5 << endl;
+    while(infile >> a1 >> a2 >> a3 >> a4 >> a5 >> a6 >> a7 >> a8 >> a9 >> a10 >> a11 >> a12 >> a13) {
+        std::cout << a1 << a2 << a3 << a4 << a5 << a6 << a7 << a8 << a9 << a10<< a11 << a12 << a13 << endl;
         v1[(row*col) + 0] = a1;
         v1[(row*col) + 1] = a2;
         v1[(row*col) + 2] = a3;
         v1[(row*col) + 3] = a4;
         v1[(row*col) + 4] = a5;
+        v1[(row*col) + 5] = a6;
+        v1[(row*col) + 6] = a7;
+        v1[(row*col) + 7] = a8;
+        v1[(row*col) + 8] = a9;
+        v1[(row*col) + 9] = a10;
+        v1[(row*col) + 10] = a11;
+        v1[(row*col) + 11] = a12;
+        v1[(row*col) + 12] = a13;
+       
+
         row++;
    }
 
@@ -107,57 +111,55 @@ int readfile(string file, int *v1, int col, int N)
 
 int main(void)
 {
-  int N = 40;
-  int col = 5;
+  int N = 169;
+  int col = 13;
   int *x0 = new int[N];
   int *x1 = new int[N];
+  int *x2 = new int[N];
+  int *x3 = new int[N];
+  int *x4 = new int[N];
+  int *x5 = new int[N];
+  int *x6 = new int[N];
+  int *x7 = new int[N];
+  int *x8 = new int[N];
+  int *x9 = new int[N];
+
   cout << "iterations " << endl;
 
   readfile("1.txt", x0,  col, N);
   readfile("2.txt", x1,  col, N);
+  readfile("3.txt", x2,  col, N);
+  readfile("4.txt", x3,  col, N);
+  readfile("5.txt", x4,  col, N);
+  readfile("6.txt", x5,  col, N);
+  readfile("7.txt", x6,  col, N);
+  readfile("8.txt", x7,  col, N);
+  readfile("9.txt", x8,  col, N);
+  readfile("10.txt", x9,  col, N);
 
-  // pattern 0
-/*  x0[0] = 1;
-  x0[1] = 1;
-  x0[2] = 1;
-  x0[3] = -1;
-*/
-  // pattern 1
-/*  x1[0] = -1;
-  x1[1] = -1;
-  x1[2] = -1;
-  x1[3] = 1;
-*/
-  int **W = NULL;  // allocating memory for W
+  int **W = NULL; 
   W = new int *[N];
   for (int i=0; i<N; i++)
   {
     W[i] = new int[N];
   }
 
-  
   for (int i=0; i<N; i++)
     for (int j=0; j<N; j++)
       W[i][j]=0;
 
-  weigths(W, x0, x1, N);
+  weigths(W, x0, x1,x2,x3,x4,x5,x6,x7,x8,x9,N);
   printw(W, N);
 
-  int *s = new int[N]; // allocation memory for s
+  int *s = new int[N]; 
 
-  readfile("x1.txt", s,  col, N);
+  readfile("output.txt", s,  col, N);
 
-  // start configuration
-/*  s[0] = -1;
-  s[1] = -1;
-  s[2] = -1;
-  s[3] = -1;
-*/
  
   int E = energy(W,s,N);
   cout << " energy of initial configuration : " << E << endl;
 
-  int *h = new int[N]; // allocation memory for h
+  int *h = new int[N]; 
 
   for (int p=0; p<N; p++)
   {
@@ -204,21 +206,10 @@ int main(void)
 
     for (int i=0; i<N; i++)
     {
-      cout << h[i] << " ";
-      if (((i+1)%col) == 0 )
-        cout << endl;
-    }
-    cout << endl;
-    
-    for (int i=0; i<N; i++)
-   
-    {
-
       if (s[i] == -1)
         cout << "0" << " ";
       else
         cout << s[i] << " ";
-      
       if (((i+1)%col) == 0 )
         cout << endl;
     }
@@ -233,6 +224,14 @@ int main(void)
  
   delete[] x0;
   delete[] x1;
+  delete[] x2;
+  delete[] x3;
+  delete[] x4;
+  delete[] x5;
+  delete[] x6;
+  delete[] x7;
+  delete[] x8;
+  delete[] x9;
   delete[] s;
   delete[] s1;
   delete[] h;
