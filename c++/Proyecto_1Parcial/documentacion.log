@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.3.22)  25 MAR 2021 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.3.22)  5 APR 2021 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -245,7 +245,20 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(./documentacion.aux)
+(./documentacion.aux
+
+LaTeX Warning: Label `fig:tigre' multiply defined.
+
+
+LaTeX Warning: Label `fig:tigre' multiply defined.
+
+
+LaTeX Warning: Label `fig:tigre' multiply defined.
+
+
+LaTeX Warning: Label `fig:tigre' multiply defined.
+
+)
 \openout1 = `documentacion.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -262,8 +275,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count110
 \scratchdimen=\dimen118
@@ -330,38 +342,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--34
 File: hopfield.png Graphic file (type png)
 <use hopfield.png>
 Package pdftex.def Info: hopfield.png  used on input line 37.
-(pdftex.def)             Requested size: 172.5pt x 106.67392pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
+(pdftex.def)             Requested size: 103.50105pt x 64.00323pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+
+ []
+
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./hopfield.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./hopfield.png>]
+<hopfiel_startjpeg.jpeg, id=30, 352.31625pt x 309.155pt>
+File: hopfiel_startjpeg.jpeg Graphic file (type jpg)
+<use hopfiel_startjpeg.jpeg>
+Package pdftex.def Info: hopfiel_startjpeg.jpeg  used on input line 50.
+(pdftex.def)             Requested size: 172.5pt x 151.36461pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
+
+ []
+
+[2 <./hopfiel_startjpeg.jpeg>]
+<hopfield-network.jpg, id=36, 438.63875pt x 185.69376pt>
+File: hopfield-network.jpg Graphic file (type jpg)
+<use hopfield-network.jpg>
+Package pdftex.def Info: hopfield-network.jpg  used on input line 65.
+(pdftex.def)             Requested size: 276.00105pt x 116.84317pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
+<letra_coreana_Ej1.png, id=37, 365.86688pt x 327.47343pt>
+File: letra_coreana_Ej1.png Graphic file (type png)
+<use letra_coreana_Ej1.png>
+Package pdftex.def Info: letra_coreana_Ej1.png  used on input line 75.
+(pdftex.def)             Requested size: 207.0021pt x 185.28267pt.
+<code.png, id=39, 170.88844pt x 169.38281pt>
+File: code.png Graphic file (type png)
+<use code.png>
+Package pdftex.def Info: code.png  used on input line 84.
+(pdftex.def)             Requested size: 207.0021pt x 205.19159pt.
+[3 <./hopfield-network.jpg> <./letra_coreana_Ej1.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
+ [4 <./code.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
 
 (./documentacion.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `documentacion.out' has not changed.
 (rerunfilecheck)             Checksum: 2A16141D527A68B8BABBED04E74C4123;143.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 6387 strings out of 492615
- 90373 string characters out of 6131390
- 189056 words of memory out of 5000000
- 10238 multiletter control sequences out of 15000+600000
+ 6416 strings out of 492615
+ 90864 string characters out of 6131390
+ 190070 words of memory out of 5000000
+ 10255 multiletter control sequences out of 15000+600000
  9796 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,35p,416b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,6n,35p,1179b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on documentacion.pdf (2 pages, 85051 bytes).
+Output written on documentacion.pdf (4 pages, 165202 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 79 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 50 words of extra memory for PDF output out of 10000 (max. 10000000)
 
