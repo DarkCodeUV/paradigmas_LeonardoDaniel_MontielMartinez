@@ -1,0 +1,55 @@
+.buttons-operation{
+    position: relative;
+    top: 50px;
+    left: 100px;
+    width: 100%;
+    
+}
+.buttons-operation{
+   /*
+    display: grid;
+    grid-template-columns: 60px 250px;
+    grid-template-rows: 60px 65px;
+    
+     display: grid;
+     grid-template-columns: 60px repeat(2, 50px) 150px;
+     grid-template-rows: repeat(2, 50px 60px);
+
+ */
+display: grid;
+  grid-template-columns: 60px 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px 60px;
+}
+
+
+
+.operation{
+    color: #000000;
+    background-color: #dadce0;
+    font-size: 20px;
+    
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+
+.numbers{
+    color: #202124;
+    background-color: #f1f3f4;
+    font-size: 20px;
+    
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+
+#equal{
+
+    color: #ffffff;
+    background-color: #4285f4;
+    width: 50px;
+    height: 50px;
+    
+}
